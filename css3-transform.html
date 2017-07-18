@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3制作立方体</title>
+	<style type="text/css">
+		.container{
+			width: 200px;
+			height: 200px;
+			position: relative;
+			perspective:1000;
+			-webkit-perspective:1000;
+		}
+		#cube{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			transform-style: preserve-3d;
+		}
+		#cube figure{
+			width: 196px;
+			height:196px;
+			border: 2px solid #000;
+			position: absolute;
+			font-size: 120px;
+			line-height: 196px;
+			font-weight: bold;
+			color: white;
+			text-align: center;
+		}
+		.front  { background: hsla(   0, 100%, 50%, 0.5 ); }
+	    .back   { background: hsla(  60, 100%, 50%, 0.5 ); }
+	    .right  { background: hsla( 120, 100%, 50%, 0.5 ); }
+	    .left   { background: hsla( 180, 100%, 50%, 0.5 ); }
+	    .top    { background: hsla( 240, 100%, 50%, 0.5 ); }
+	    .bottom { background: hsla( 300, 100%, 50%, 0.5 ); }
+
+	    #cube:hover .front{transform: rotate(0) translateZ(100px);}
+	    #cube:hover .back{transform: rotateX(180deg) translateZ(100px);}
+	    #cube:hover .right{transform: rotateY(90deg) translateZ(100px);}
+	    #cube:hover .left{transform: rotateY(-90deg) translateZ(100px);}
+	    #cube:hover .top{transform: rotateX(90deg) translateZ(100px);}
+	    #cube:hover .bottom{transform: rotateX(-90deg) translateZ(100px);}
+
+	    #cube figure{transition: all 1s;}
+	   
+		
+		/* @keyframes rotate{100%{transform:rotate3d(1,1,1,360deg)}};
+		
+		#cube:hover{animation: rotate 5s 14s linear infinite both} */
+	</style>
+</head>
+<body>
+	<section class="container">
+		<div id="cube">
+			<figure class="front">1</figure>
+			<figure class="back">2</figure>
+			<figure class="right">3</figure>
+	        <figure class="left">4</figure>
+	        <figure class="top">5</figure>
+	        <figure class="bottom">6</figure>
+		</div>
+	</section>
+	
+</body>
+</html>
